@@ -2,9 +2,9 @@ import { test, expect } from './fixtures';
 import { ROUTES } from '../src/constants';
 
 test.describe('navigating app', () => {
-  test('page one should render successfully', async ({ gotoPage, page }) => {
+  test('page one should render AnalizAI copilot successfully', async ({ gotoPage, page }) => {
     await gotoPage(`/${ROUTES.One}`);
-    await expect(page.getByText('This is page one.')).toBeVisible();
+    await expect(page.getByText(/AnalizAI/i).first()).toBeVisible();
   });
 
   test('page two should render successfully', async ({ gotoPage, page }) => {
@@ -17,15 +17,8 @@ test.describe('navigating app', () => {
     await expect(page.getByText('ID: 123456')).toBeVisible();
   });
 
-  test('page three should render sucessfully', async ({ gotoPage, page }) => {
-    // wait for page to successfully render
-    await gotoPage(`/${ROUTES.One}`);
-    await expect(page.getByText('This is page one.')).toBeVisible();
-
-    // navigating to page four with full width layout without sidebar menu
-    await page.getByText('Full-width page example').click();
-
-    // navigate back to page one
-    await page.getByRole('link', { name: 'Back', exact: true }).click();
+  test('page four should render successfully', async ({ gotoPage, page }) => {
+    await gotoPage(`/${ROUTES.Four}`);
+    await expect(page.getByRole('link', { name: 'Back', exact: true })).toBeVisible();
   });
 });
