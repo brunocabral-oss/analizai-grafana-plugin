@@ -202,7 +202,7 @@ jobs:
       - name: Docker logs
         if: ${{ always() && steps.run-tests.outcome == 'failure' }}
         run: |
-          docker logs vocpilot-vocpilot-app >& grafana-server.log
+          docker compose logs grafana >& grafana-server.log || true
 
       - name: Stop grafana docker
         run: docker compose down
