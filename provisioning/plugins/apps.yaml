@@ -1,0 +1,11 @@
+apiVersion: 1
+
+apps:
+  - type: 'analizai-app'
+    org_id: 1
+    org_name: 'nocpilot'
+    disabled: false
+    jsonData:
+      apiUrl: http://default-url.com
+    secureJsonData:
+      apiKey: '${LLM_API_KEY:-your-api-key-here}'

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "panel",
+  "name": "AnalizAI Copilot",
+  "id": "analizai-copilot-panel",
+  "info": {
+    "keywords": ["ai", "copilot", "observability", "noc", "panel", "analizai"],
+    "description": "AnalizAI Observability & Triagem de Incidentes Copilot Panel",
+    "author": {
+      "name": "AnalizAI Engineering"
+    },
+    "logos": {
+      "small": "../img/logo-analizai.svg",
+      "large": "../img/logo-analizai.svg"
+    },
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=10.0.0",
+    "plugins": []
+  }
+}

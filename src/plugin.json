@@ -1,0 +1,70 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "app",
+  "name": "AnalizAI",
+  "id": "analizai-app",
+  "info": {
+    "keywords": ["ai", "copilot", "observability", "noc", "rca", "zabbix", "graylog", "telemetry", "analizai"],
+    "description": "AnalizAI — Análise Inteligente de Dashboards, Validação de Projetos e RCA no Grafana",
+    "author": {
+      "name": "AnalizAI Engineering"
+    },
+    "logos": {
+      "small": "img/logo-analizai.svg",
+      "large": "img/logo-analizai.svg"
+    },
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "includes": [
+    {
+      "type": "page",
+      "name": "AnalizAI Cockpit",
+      "path": "/a/%PLUGIN_ID%/one",
+      "addToNav": true,
+      "defaultNav": true
+    },
+    {
+      "type": "page",
+      "icon": "cog",
+      "name": "Configuration",
+      "path": "/plugins/%PLUGIN_ID%",
+      "role": "Admin",
+      "addToNav": true
+    },
+    {
+      "type": "panel",
+      "name": "AnalizAI Copilot",
+      "path": "panel/plugin.json"
+    }
+  ],
+  "dependencies": {
+    "grafanaDependency": ">=10.0.0",
+    "plugins": []
+  },
+  "routes": [
+    {
+      "path": "llm/v1/chat/completions",
+      "method": "POST",
+      "url": "http://analizai-llm-proxy:3011/v1/chat/completions",
+      "headers": [
+        {
+          "name": "Authorization",
+          "content": "Bearer {{ .SecureJsonData.apiKey }}"
+        }
+      ]
+    },
+    {
+      "path": "llm/v1/models",
+      "method": "GET",
+      "url": "http://analizai-llm-proxy:3011/v1/models",
+      "headers": [
+        {
+          "name": "Authorization",
+          "content": "Bearer {{ .SecureJsonData.apiKey }}"
+        }
+      ]
+    }
+  ]
+}

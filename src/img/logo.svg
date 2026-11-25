@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="analizaiGrad" x1="20" y1="110" x2="104" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="55%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
+    </linearGradient>
+    <linearGradient id="sparkGrad" x1="64" y1="6" x2="64" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer stylized A prism frame -->
+  <path d="M58 34L20 106H40L48 90H80L88 106H108L70 34H60L75 64V80H53L62 62L58 34Z" fill="url(#analizaiGrad)" opacity="0.22"/>
+  <!-- Left & right angled prism legs + crossbar -->
+  <path d="M56.5 34.5L18 106H35.5L42.5 92.5L84.5 76.5L96 106H110L71.5 34.5H62.5L88.5 85.5L47 85.5L63.5 53.5L56.5 34.5Z" fill="url(#analizaiGrad)"/>
+  <!-- Three ascending telemetry bars inside A -->
+  <rect x="43" y="76" width="8.5" height="14" rx="2" fill="url(#analizaiGrad)"/>
+  <rect x="56" y="61" width="8.5" height="25" rx="2" fill="url(#analizaiGrad)"/>
+  <rect x="69" y="46" width="8.5" height="36" rx="2" fill="url(#analizaiGrad)"/>
+  <!-- Luminous AI decision spark at apex -->
+  <path d="M64 6C65.4 17.8 70.2 22.6 82 24C70.2 25.4 65.4 30.2 64 42C62.6 30.2 57.8 25.4 46 24C57.8 22.6 62.6 17.8 64 6Z" fill="url(#sparkGrad)"/>
+</svg>
